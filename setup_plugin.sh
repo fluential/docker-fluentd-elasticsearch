@@ -13,6 +13,12 @@ ES_INDEX=${ES_INDEX:-fluentd}
 ES_TYPE=${ES_TYPE:-fluentd}
 
 echo "
+<source>
+  type syslog
+  port 5140
+  tag system
+  bind 0.0.0.0
+</source>
 <match **>
 	type elasticsearch
 	logstash_format true
